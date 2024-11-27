@@ -1,0 +1,34 @@
+.parent{
+    border: 2px solid black;
+    height: 400px;
+    width: 600px;
+    margin: auto;
+    position: relative;
+}
+.tleft{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.tright{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    
+}
+.bleft{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.bright{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
