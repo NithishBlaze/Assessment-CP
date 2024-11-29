@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObjectTask</title>
+</head>
+
+<body>
+    <script>
+        let emp = [
+            { id: 1, name: "Rahul", post: "developer", salary: 10000, gender: "female", age: 38, State: "Tamil Nadu" },
+            { id: 2, name: "Tarun", post: "manager", salary: 10000, gender: "Male", age: 35, State: "Kerala" },
+            { id: 3, name: "Nithish", post: "intern", salary: 10000, gender: "Male", age: 27, State: "Karnataka" },
+            { id: 4, name: "Kumar", post: "trainee", salary: 10000, gender: "female", age: 59, State: "Kerala" },
+            { id: 5, name: "Blaze", post: "developer", salary: 10000, gender: "Male", age: 62, State: "Tamil Nadu" },
+            { id: 6, name: "NithishKumar", post: "trainee", salary: 10000, gender: "Male", age: 45, State: "Rajasthan" },
+            { id: 7, name: "NithishBlaze", post: "developer", salary: 10000, gender: "female", age: 39, State: "Tamil Nadu" },
+            { id: 8, name: "Dhanush", post: "intern", salary: 10000, gender: "Male", age: 44, State: "Kerala" },
+            { id: 9, name: "Sai", post: "manager", salary: 10000, gender: "Male", age: 60, State: "Jammu Kashmir" },
+            { id: 10, name: "Sanjay", post: "developer", salary: 10000, gender: "Male", age: 22, State: "Tamil Nadu" },
+        ];
+
+        document.write("<hr>");
+        document.write("<h2> Display of all 10 employees </h2>");
+        for (let i of emp) {
+            document.write(`<br> id: ${i.id}, name: ${i.name}, post: ${i.post}, salary: ${i.salary}, gender: ${i.gender}, age: ${i.age}, State: ${i.State} <br>`);
+        }
+
+        document.write("<hr>");
+        document.write("<h2> Display of employees who's post is manager </h2>");
+
+        for(let i of emp) {
+            if (i.post == "manager"){
+                document.write(`<br> id: ${i.id}, name: ${i.name}, post: ${i.post}, salary: ${i.salary}, gender: ${i.gender}, age: ${i.age}, State: ${i.State} <br>`);
+            }
+        }
+
+        document.write("<hr>");
+        document.write("<h2> Display of all employees who are females</h2>");
+
+        for(let i of emp) {
+            if (i.gender == "female"){
+                document.write(`<br> id: ${i.id}, name: ${i.name}, post: ${i.post}, salary: ${i.salary}, gender: ${i.gender}, age: ${i.age}, State: ${i.State} <br>`);
+            }
+        }
+
+        document.write("<hr>");
+        document.write("<h2> Display of all employees who are above age 55 </h2>");
+
+        for(let i of emp) {
+            if (i.age > "55"){
+                document.write(`<br> id: ${i.id}, name: ${i.name}, post: ${i.post}, salary: ${i.salary}, gender: ${i.gender}, age: ${i.age}, State: ${i.State}<br>`);
+            }
+        }
+
+        document.write("<hr>");
+        document.write("<h2> Display of all employees who belong to Tamil Nadu </h2>");
+
+        for(let i of emp) {
+            if (i.State == "Tamil Nadu"){
+                document.write(`<br> id: ${i.id}, name: ${i.name}, post: ${i.post}, salary: ${i.salary}, gender: ${i.gender}, age: ${i.age}, State: ${i.State} <br>`);
+            }
+        }
+
+        document.write("<hr>");
+
+    </script>
+</body>
+
+</html>
