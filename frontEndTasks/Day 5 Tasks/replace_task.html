@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        textarea {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            resize: none;
+            outline: none;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004494;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <textarea id="text1"></textarea>
+        <div class="controls">
+            <div>
+                <label for="old">Old Text</label>
+                <input type="text" id="old">
+            </div>
+            <div>
+                <label for="new">New Text</label>
+                <input type="text" id="new">
+            </div>
+            <div class="actions">
+                <button type="button" onclick="replace()">Replace</button>
+                <button type="button" onclick="replaceText()">Replace ALL</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function replace() {
+            let data = document.getElementById("text1").value;
+            console.log(data);
+            let newTxt = document.getElementById("new").value;
+            console.log(newTxt);
+            let oldTxt = document.getElementById("old").value;
+            console.log(oldTxt);
+            let result = data.replace(oldTxt, newTxt);
+            document.getElementById("text1").value = result;
+        }
+
+        function replaceText() {
+            let data = document.getElementById("text1").value;
+            console.log(data);
+            let newTxt = document.getElementById("new").value;
+            console.log(newTxt);
+            let oldTxt = document.getElementById("old").value;
+            console.log(oldTxt);
+            let result = data.replaceAll(oldTxt, newTxt);
+            document.getElementById("text1").value = result;
+        }
+    </script>
+</body>
+
+</html>
