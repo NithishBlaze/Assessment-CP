@@ -1,0 +1,12 @@
+<p>switch-content works!</p>
+<div >
+    <button type="button" class="btn btn-primary" (click)="bikesButton()">Bikes</button>
+    <button type="button" class="btn btn-primary" (click)="carsButton()">Cars</button>
+        <div *ngFor="let selected of selectedItems">
+            <div (click)="onclick(selected)" class="clickable" >
+                {{selected}}
+            </div>
+        </div>
+        <hr>
+        <div *ngIf="name">You have selected {{name}} </div>
+</div>

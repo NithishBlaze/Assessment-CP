@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Picture</title>
+    <style>
+        img {
+            height: 150px;
+            width: 285px;
+            border-radius: 6px;
+            box-shadow: 0px 0px 13px;
+        }
+
+        .parent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px;
+        }
+
+        button {
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-size: 13px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555555;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #2 {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <h2>Toggle Image</h2>
+        <div class="image">
+            <img src="../assets/images/car.png" alt="car" id="1">
+            <p id="2">Car</p>
+            <div class="buttons">
+                <button type="button" onclick="changeCar()">Car</button>
+                <button type="button" onclick="changeOnePiece()">One Piece</button>
+                <button type="button" onclick="changeZoro()">Zoro</button>
+                <button type="button" onclick="changeNature()">Nature</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function changeCar() {
+            document.getElementById("1").src = "../assets/images/car.png";
+            document.getElementById("2").innerHTML = "Car";
+        }
+        function changeOnePiece() {
+            document.getElementById("1").src = "../assets/images/onepieceLogo.jpg";
+            document.getElementById("2").innerHTML = "One Piece";
+        }
+        function changeZoro() {
+            document.getElementById("1").src = "../assets/images/zoro.jpg";
+            document.getElementById("2").innerHTML = "Zoro";
+        }
+        function changeNature() {
+            document.getElementById("1").src = "../assets/images/nature.jpg";
+            document.getElementById("2").innerHTML = "Nature";
+        }
+    </script>
+</body>
+
+</html>
