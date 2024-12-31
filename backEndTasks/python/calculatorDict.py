@@ -32,24 +32,16 @@ operations = {
 
 def main(value, num1, num2):
     option = value
-    if '+' == option:
-        print('Addition:', add(num1, num2))
-    elif '-' == option:
-        print('Subtraction:', sub(num1, num2))
-    elif '*' == option:
-        print('Multiplication:', mul(num1, num2))
-    elif '/' == option:
-        if num1 >= num2:
-            print('Division:', div(num1, num2))
+    if option in operations:
+        if option == '/' and num1 < num2:
+            print('Enter a proper number for division !')
+        elif option == '//' and num1 <= num2:
+            print('Enter a proper number for division !')
         else:
-            print('Enter a proper number for division!')
-    elif '//' == option:
-        if num1 > num2:
-            print('Floor Division:', floorDiv(num1, num2))
-        else:
-            print('Enter a proper number for division!')
-    elif '**' == option:
-        print('Exponential:', expo(num1, num2))
+            result = operations[option](num1, num2)
+            print(f'Result of {option}:', result)
+    else:
+        print("Invalid operand entered!")
 
 if __name__ == '__main__':
     while True:
