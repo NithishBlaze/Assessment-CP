@@ -1,0 +1,41 @@
+{% extends 'posts/base.html' %}
+{% block titlePage %}
+Blazin' Blog!
+{% endblock titlePage %}
+{% block content %}
+
+<h1>Introduction</h1>
+<p>Welcome to Blazin' Blog, where the heat is always on! Whether you're looking for the latest trends, fiery opinions, or sizzling hot takes on everything from pop culture to personal growth, you've come to the right place. We’re all about sparking conversations, exploring new ideas, and keeping things bold and fresh.
+    At Blazin' Blog, we dive into topics that light a fire in your mind, featuring everything from lifestyle tips and tech updates to thought-provoking stories and motivational content. We're here to keep you inspired, entertained, and informed, with each post designed to bring something new and exciting to your day.
+    So grab a seat, turn up the heat, and explore the world of Blazin' Blog—we promise it'll be a ride you won’t forget. Stay tuned for regular updates and feel free to leave your thoughts in the comments; we love a good conversation!
+</p>
+
+<br>
+<hr>
+<br>
+
+<h1>Latest Posts:</h1>
+
+<div class="row">
+    {% for post in object_list %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100"> 
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img-top" style="width: 100%; height: auto;">
+                {% else %}
+                    <img src="https://via.placeholder.com/400x250" alt="Default Image" class="card-img-top" style="width: 100%; height: auto;">
+                {% endif %}
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">
+                        <a href="{% url 'post-detail' post.pk %}" class="post-title">{{ post.title }}</a>
+                    </h5>
+                    <p class="text-muted">By: <i>{{ post.author.first_name }} {{ post.author.last_name }}</i></p>
+                    <p class="card-text flex-grow-1">{{ post.content|truncatewords:20 }}</p> 
+                    <a href="{% url 'post-detail' post.pk %}" class="btn btn-primary mt-auto">Read More</a> 
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

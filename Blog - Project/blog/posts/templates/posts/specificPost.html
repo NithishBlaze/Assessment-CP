@@ -1,0 +1,31 @@
+{% extends 'posts/base.html' %}
+{% block titlePage %}
+  {{ post.title_tag }}
+{% endblock titlePage %}
+{% block content %}
+
+<div class="container">
+    <h2>{{ post.title }}</h2>
+    <small class="text-muted">By: {{ post.author.first_name }} {{ post.author.last_name }}</small>
+    <hr>
+    
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid mb-4">
+    {% else %}
+        <img src="https://via.placeholder.com/800x400" alt="Default Image" class="img-fluid mb-4"> 
+    {% endif %}
+    
+    <div class="post-content">
+        {{ post.content|safe }} 
+    </div>
+    
+    <br>
+    
+    <div class="btn-group" role="group" aria-label="Post Actions">
+        <a href="{% url 'home' %}" class="btn btn-dark">Back</a>
+        <a href="{% url 'update-post' post.pk %}" class="btn btn-dark">Edit</a>
+        <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+
+{% endblock content %}
